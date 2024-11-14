@@ -1,0 +1,10 @@
+{
+    "shell_cmd": "g++ -Wl,-stack=268435456 -std=c++17 \"${file}\" -o \"${file_path}/${file_base_name}\" && \"${file_path}/${file_base_name}\" < \"D:\\"Folder_Name"\\input.txt\" > \"D:\\"Folder_Name"\\output.txt\"",
+    "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+    "working_dir": "${file_path}",
+    "selector":  "source.c++"
+}
+
+
+# file_path edit - c++17.sublime-build
+# Save it.
