@@ -1,0 +1,24 @@
+{
+  "code-runner.executorMap": {
+    "cpp": "g++ $fullFileName -o $fileNameWithoutExt && Get-Content input.txt | .\\$fileNameWithoutExt > output.txt && del $fileNameWithoutExt.exe",
+    "c": "gcc $fullFileName -o $fileNameWithoutExt && Get-Content input.txt | .\\$fileNameWithoutExt > output.txt && del $fileNameWithoutExt.exe",
+    
+  },
+  "editor.mouseWheelZoom": true,
+  "code-runner.runInTerminal": true,
+  "code-runner.saveFileBeforeRun": true,
+  "editor.fontSize": 18,
+  "editor.wordWrap": "on",
+  "files.autoSave": "afterDelay",
+  "git.enableSmartCommit": true,
+  "git.autofetch": true,
+  "workbench.colorTheme": "Dracula Theme",
+  "git.confirmSync": false,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "files.associations": {
+    "ostream": "cpp",
+    "iostream": "cpp",
+    "numeric": "cpp"
+  }
+}
