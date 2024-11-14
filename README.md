@@ -19,7 +19,6 @@ typedef long long ll;
 
 int main() {
     optimize();
-    
     // Your code here
     
     return 0;
@@ -54,7 +53,6 @@ typedef pair<ll, ll> pll;
 
 int main() {
     optimize();
-    
     // Your code here
     
     return 0;
@@ -151,6 +149,7 @@ void faltu(T arg, const hello &...rest)
 
 int main()
 {
+    // Your code here
 
     return 0;
 }
