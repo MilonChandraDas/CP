@@ -8,7 +8,7 @@ typedef long long ll;
 
 int main() {
     optimize();
-    
+   
     
     
     return 0;
