@@ -3,5 +3,10 @@
     "cpp": "g++ $fullFileName -o main && Get-Content input.txt | .\\main > output.txt && del main.exe",
     "c": "gcc $fullFileName -o main && Get-Content input.txt | .\\main > output.txt && del main.exe",
     "python": "Get-Content input.txt | python $fullFileName > output.txt"
-  }
+  },
+  "files.associations": {
+    "random": "cpp",
+    "iostream": "cpp"
+  },
+  "C_Cpp.errorSquiggles": "disabled"
 }

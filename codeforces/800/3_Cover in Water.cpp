@@ -5,21 +5,18 @@ using ll = long long;
 constexpr char nl = '\n';
 #define fastio() ios_base::sync_with_stdio(false); cin.tie(nullptr);
 
-int fact(int n) {
-    if (n == 0) return 1;
-
-    int res = n * fact(n - 1);
-    return res;
-}
-
 int main() {
     fastio();
-    
-    int n;
-    cin >> n;
+    int t;
+    cin >> t;
 
-    int ans = fact(n);
-    cout << ans;
+    while (t--) {
+        int n; cin >> n;
+        string s; cin >> s;
+
+        int ans = (s.find("...") != -1) ? 2 : (count(s.begin(), s.end(), '.'));
+        cout << ans << nl;
+    }
     
     return 0;
 }

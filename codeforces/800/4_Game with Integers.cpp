@@ -8,7 +8,15 @@ constexpr char nl = '\n';
 int main() {
     fastio();
     
-    
+    int t;
+    cin >> t;
+
+    while (t--) {
+        int n;
+        cin >> n;
+
+        cout << ((n%3 != 0) ? "First" : "Second") << nl;
+    }
     
     return 0;
 }
