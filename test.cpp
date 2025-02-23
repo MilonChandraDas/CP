@@ -5,25 +5,24 @@ using ll = long long;
 constexpr char nl = '\n';
 #define fastio() ios_base::sync_with_stdio(false); cin.tie(nullptr);
 
-const int mx = 1e9+12;
-int a[mx];
 
 int main() {
     fastio();
-    int n;
-    cin >> n;
+    
+    int m, n;
+    cin >> m >> n;
+    vector<int> a(m), b(n);
+    
+    for (int i = 0; i < m; i++) cin >> a[i];
+    for (int i = 0; i < n; i++) cin >> b[i];
 
-    // Use a vector instead of a large static array
-    vector<int> a(n + 1, 0); // Initialize with size n+1 and default value 0
+    sort(a.begin(), a.end());
 
-    for (int i = 1; i <= n; i++) {
-        a[i] = i;
+    for (int i = 0; i < n; i++) {
+        int up = upper_bound(a.begin(), a.end(), b[i]) - a.begin();
+        cout << up << " ";
+
     }
-
-    int ans = 0;
-    for (int i = 0; i <= n; i++) {
-        ans += (a[i] | n); // Perform bitwise OR operation
-    }
-
-    cout << ans << nl;
+    
+    return 0;
 }
