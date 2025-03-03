@@ -8,5 +8,7 @@ constexpr char nl = '\n';
 int main() {
     fastio();
     
+    
+    
     return 0;
 }
