@@ -13,9 +13,29 @@ constexpr int INF = 1e9;
 #define yes cout << "YES" << nl
 #define no cout << "NO" << nl
 
+void solve() {
+    int n;
+    cin >> n;
+    vector<int> v(n);
+    for (int i = 0; i < n; i++) cin >> v[i];
+
+    int minimum = 1e9;
+    for (int i = 1; i < n; i++) {
+        minimum = min(minimum, v[i] - v[i-1]);
+    }
+
+    if (minimum < 0) cout << 0 << nl;
+    else cout << (minimum / 2) + 1 << nl;
+}
+
 int main() {
     fastio();
-    
+    int t;
+    cin >> t;
+
+    while (t--) {
+        solve();
+    }
     
     return 0;
 }
