@@ -13,24 +13,35 @@ constexpr int INF = 1e9;
 #define yes cout << "YES" << nl
 #define no cout << "NO" << nl
 
+void solve() {
+    int n;
+    cin >> n;
+    vector<int> v(n);
+
+    for (int i = 0; i < n; i++) cin >> v[i];
+
+    bool done = false;
+    for (int i = 0; i < n; i++) {
+        for (int j = i+1; j < n; j++) {
+            if(__gcd(v[i], v[j]) <= 2) {
+                done = true;
+                break;
+            }
+        }
+    }
+
+    if (done) yes;
+    else no;
+}
+
 int main() {
     fastio();
     int t;
     cin >> t;
+
     while (t--) {
-        int n;
-        cin >> n;
-        vector<int> v(n);
-
-        for (int i = 0; i < n; i++) cin >> v[i];
-
-        int ans = v[0];
-        for (int i = 1; i < n; i++) {
-            ans = __gcd(ans, v[i]);
-            if (ans == 1) break;
-        }
-        if (ans >= n) no;
-        else yes;
+        solve();
     }
+    
     return 0;
 }
