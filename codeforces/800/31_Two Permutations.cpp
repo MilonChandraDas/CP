@@ -13,9 +13,26 @@ constexpr int INF = 1e9;
 #define yes cout << "YES" << nl
 #define no cout << "NO" << nl
 
+void solve() {
+    int n, a, b;
+    cin >> n >> a >> b;
+
+    if ((a==n && b==n) || (a+b < n-1)) {
+        yes;
+    }
+    else {
+        no;
+    }
+}
+
 int main() {
     fastio();
-    
+    int t;
+    cin >> t;
+
+    while (t--) {
+        solve();
+    }
     
     return 0;
 }
