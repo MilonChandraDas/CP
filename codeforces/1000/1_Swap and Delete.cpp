@@ -14,23 +14,7 @@ constexpr int INF = 1e9;
 #define no cout << "NO" << nl
 
 void solve() {
-    int n;
-    cin >> n;
-    vector<int> v(n);
-    for (int i = 0; i < n; i++) cin >> v[i];
-
-    if (n%2 == 0) {
-        cout << 2 << nl;
-        cout << 1 << " " << n << nl;
-        cout << 1 << " " << n << nl;
-    }
-    else {
-        cout << 4 << nl;
-        cout << 1 << " " << n-1 << nl;
-        cout << 1 << " " << n-1 << nl;
-        cout << n-1 << " " << n << nl;
-        cout << n-1 << " " << n << nl;
-    }
+    
 }
 
 int main() {

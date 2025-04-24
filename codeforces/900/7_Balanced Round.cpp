@@ -14,23 +14,27 @@ constexpr int INF = 1e9;
 #define no cout << "NO" << nl
 
 void solve() {
-    int n;
-    cin >> n;
+    int n, k;
+    cin >> n >> k;
     vector<int> v(n);
     for (int i = 0; i < n; i++) cin >> v[i];
+    sort(v.begin(), v.end());
 
-    if (n%2 == 0) {
-        cout << 2 << nl;
-        cout << 1 << " " << n << nl;
-        cout << 1 << " " << n << nl;
-    }
+    if (v.size() == 1) cout << 0 << nl;
     else {
-        cout << 4 << nl;
-        cout << 1 << " " << n-1 << nl;
-        cout << 1 << " " << n-1 << nl;
-        cout << n-1 << " " << n << nl;
-        cout << n-1 << " " << n << nl;
+        int maxi = -1e5;
+        int cnt = 0;
+        for (int i = 1; i < n; i++) {
+            if (v[i] - v[i-1] <= k) {
+                cnt++;
+                maxi = max(maxi, cnt);
+            } else{
+                cnt = 0;
+            }
+        }
+        cout << n-maxi-1 << nl;
     }
+    
 }
 
 int main() {
