@@ -14,26 +14,37 @@ constexpr int INF = 1e9;
 #define no cout << "NO" << nl
 
 void solve() {
-    ll n, k, x;
-    cin >> n >> k >> x;
+    ll n, q;
+    cin >> n >> q;
+    ll a[n+1], pref[n+1];
+    pref[0] = 0;
 
-    ll min_sum = k*(k+1)/2;
-    ll temp_1 = n*(n+1)/2;
-    ll temp_2 = (n-k)*(n-k+1)/2;
-    ll max_sum = temp_1-temp_2;
+    for (int i = 1; i <= n; i++) {
+        cin >> a[i];
+        pref[i] = a[i] + pref[i-1];
+    }
+    ll total_pref = pref[n];
 
-    if (min_sum <= x && x <= max_sum) yes;
-    else no;
+    while (q--) {
+        ll l, r, k;
+        cin >> l >> r >> k;
+
+        ll out_pref = pref[r] - pref[l-1];
+        ll in_pref = ((r-l)+1)*k;
+
+        ll calculate_pref = total_pref - out_pref + in_pref;
+
+        if (calculate_pref % 2 == 1) yes;
+        else no;
+    }
 }
 
 int main() {
     fastio();
     int t;
     cin >> t;
-
     while (t--) {
         solve();
     }
-    
     return 0;
 }
