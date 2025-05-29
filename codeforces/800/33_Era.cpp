@@ -14,7 +14,17 @@ constexpr int INF = 1e9;
 #define no cout << "NO" << nl
 
 void solve() {
-    
+    int n;
+    cin >> n;
+
+    int ans = 0;
+
+    for (int i = 1; i <= n; i++) {
+        int x;
+        cin >> x;
+        if (x > i) ans = max(ans, x-i);
+    }
+    cout << ans << nl;
 }
 
 int main() {

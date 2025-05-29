@@ -13,29 +13,25 @@ constexpr int INF = 1e9;
 #define yes cout << "YES" << nl
 #define no cout << "NO" << nl
 
+int set_check_bit(int x) {
+    int res = 0;
+    for (int k = 0; k < 10; k++) {
+        if ((x >> k) & 1) {
+            res++;
+        }
+    }
+    return res;
+}
+
 void solve() {
-    string s;
-    cin >> s;
+    int n;
+    cin >> n;
 
-    vector<char> v;
-    int one = 0, zero = 0;
-    for (int i = 0; i < s.size(); i++) {
-        v.push_back(s[i]);
-        if (s[i] == '1') one++;
-        else zero++;
+    int sum = 0;
+    for (int i = 1; i <= n; i++) {
+        sum += set_check_bit(i);
     }
-
-    for (int i = 0; i < v.size(); i++) {
-        if (v[i] == '1') {
-            if (zero > 0) zero--;
-            else break;
-        }
-        if (v[i] == '0') {
-            if (one > 0) one--;
-            else break;
-        }
-    }
-    cout << one + zero << nl;
+    cout << sum << nl;
 }
 
 int main() {

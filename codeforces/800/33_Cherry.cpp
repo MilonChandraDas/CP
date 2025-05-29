@@ -14,28 +14,20 @@ constexpr int INF = 1e9;
 #define no cout << "NO" << nl
 
 void solve() {
-    string s;
-    cin >> s;
+    int n;
+    cin >> n;
+    int a[n];
 
-    vector<char> v;
-    int one = 0, zero = 0;
-    for (int i = 0; i < s.size(); i++) {
-        v.push_back(s[i]);
-        if (s[i] == '1') one++;
-        else zero++;
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+    
+    ll sum = 0;
+    for (int i = 1; i < n; i++) {
+        sum = max(sum, 1LL * a[i] * a[i-1]);
     }
 
-    for (int i = 0; i < v.size(); i++) {
-        if (v[i] == '1') {
-            if (zero > 0) zero--;
-            else break;
-        }
-        if (v[i] == '0') {
-            if (one > 0) one--;
-            else break;
-        }
-    }
-    cout << one + zero << nl;
+    cout << sum << nl;
 }
 
 int main() {
