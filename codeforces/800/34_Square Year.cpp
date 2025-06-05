@@ -14,17 +14,26 @@ constexpr int INF = 1e9;
 #define no cout << "NO" << nl
 
 void solve() {
-    
+    int x;
+    cin >> x;
+
+    int sr = sqrt(x);
+
+    if (sr * sr == x) {
+        cout << 0 << " " << sr << nl;
+    }
+    else {
+        cout << -1 << nl;
+    }
+
 }
 
 int main() {
     fastio();
-    int cnt = 0;
-    int n; cin >> n;
-    for (int i = 2; i*i <= n; i++) {
-      
-      if (n % i == 0) cnt++;
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
     }
-    cout << cnt<< nl;
     return 0;
 }
