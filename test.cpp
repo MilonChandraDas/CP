@@ -19,12 +19,10 @@ void solve() {
 
 int main() {
     fastio();
-    int cnt = 0;
-    int n; cin >> n;
-    for (int i = 2; i*i <= n; i++) {
-      
-      if (n % i == 0) cnt++;
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
     }
-    cout << cnt<< nl;
     return 0;
 }
