@@ -6,7 +6,6 @@ using dl = double;
 
 constexpr char nl = '\n';
 constexpr int MOD = 1e9 + 7;
-constexpr int INF = 1e9;
 
 #define fastio() ios_base::sync_with_stdio(false); cin.tie(nullptr)
 #define fraction() cout << fixed << setprecision(10)
@@ -14,23 +13,14 @@ constexpr int INF = 1e9;
 #define no cout << "NO" << nl
 
 void solve() {
-    int n;
-    cin >> n;
-    vector<int> v(n);
-    for (int i = 0; i < n; i++) cin >> v[i];
+    int n, k;
+    cin >> n >> k;
 
-    if (n%2 == 0) {
-        cout << 2 << nl;
-        cout << 1 << " " << n << nl;
-        cout << 1 << " " << n << nl;
+    for (int i = 1; i <= n; i++) {
+        if (i <= k) cout << 1;
+        else cout << 0;
     }
-    else {
-        cout << 4 << nl;
-        cout << 1 << " " << n-1 << nl;
-        cout << 1 << " " << n-1 << nl;
-        cout << n-1 << " " << n << nl;
-        cout << n-1 << " " << n << nl;
-    }
+    cout << nl;
 }
 
 int main() {
